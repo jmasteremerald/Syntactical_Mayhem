@@ -22,23 +22,4 @@
 # Generative AI has been used extensively while developing this package.
 # 
 
-from dotenv import dotenv_values
-from owlmind.discord import DiscordBot
-from owlmind.botengine import SimpleBrain
-
-if __name__ == '__main__':
-
-    # load token from .env
-    config = dotenv_values(".env")
-    ##TOKEN = config['TOKEN']
-    ## Alternative: Hard-code your TOKEN here and remote the comment:
-    TOKEN='MTMzMTI1ODkxNTYyNjgxNTQ5OQ.GN1lUZ.28PburzcCMcRyCP3ySW9llvN4qSdCTVZKcWs2Y'
-
-    # Load Simples Bot Brain loading rules from a CSV
-    brain = SimpleBrain(id='bot-1')
-    brain.load('rules/bot-rules-2.csv')
-
-    # Kick start the Bot Runner process
-    bot = DiscordBot(token=TOKEN, brain=brain, debug=True)
-    bot.run()
 
